@@ -34,7 +34,7 @@ function getWeatherForecast(event) {
   event.preventDefault();
   var cityName = document.getElementById('search-input').value;
   var apiKey = '3327935e8d988dde8910d3b7a33aaa5e';
-  var requestUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
+  var requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
 
   fetch(requestUrl)
       .then(response => response.json())
@@ -77,7 +77,7 @@ function getWeatherForecast(event) {
                   forecastDiv.innerHTML += `
                       <div>
                           <h3>${formatDate(forecast.dt_txt)}</h3>
-                          <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+                          <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
                           <p>Temperature: ${forecast.main.temp}°F</p>
                           <p>Wind: ${forecast.wind.speed} MPH</p>
                           <p>Humidity: ${forecast.main.humidity}%</p>
